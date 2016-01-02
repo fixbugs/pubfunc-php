@@ -182,7 +182,7 @@ function get_gvar($key, $type=''){
  * @param string $url
  * @return mixed string/bool
  */
-function get_url_domain($url){
+function getUrlDomain($url){
     if(preg_match('/^(https?:\/\/)?([a-z0-9.-]+)(\/.*)?$/i', $url,$matches)){
         return $matches[2];
     }
@@ -213,7 +213,7 @@ function spaceCheck($value){
  * @param $needle 前缀
  * @return bool
  */
-function startwith($str,$needle){
+function startWith($str,$needle){
     return strpos($str,$needle) === 0;
 }
 
@@ -224,12 +224,27 @@ function startwith($str,$needle){
  * @param $needle 后缀
  * @return bool
  */
-function endwith($str,$needle){
+function endWith($str,$needle){
     $length = strlen($needle);
     if($length == 0){
         return true;
     }
     return (substr($str,-$length) === $needle);
+}
+
+/**
+ * 字符串命名风格转换
+ * type 0 将Java风格转换为C的风格 1 将C风格转换为Java的风格
+ * @param string $name 字符串
+ * @param integer $type 转换类型
+ * @return string
+ */
+function parseName($name, $type=0) {
+    if ($type) {
+        return ucfirst(preg_replace_callback('/_([a-zA-Z])/', function($match){return strtoupper($match[1]);}, $name));
+    } else {
+        return strtolower(trim(preg_replace("/[A-Z]/", "_\\0", $name), "_"));
+    }
 }
 
 /**
