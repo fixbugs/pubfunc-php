@@ -1,11 +1,6 @@
 <?php
 /**
  * 系统初始化加载文件
- * @category    Pub
- * @package     Pub.house.sina.com.cn
- * @copyright   Leju Publish Content System
- * @license     Leju Publish Content System license
- * @author      qiqing@leju.com
  */
  
 //设置mb编码

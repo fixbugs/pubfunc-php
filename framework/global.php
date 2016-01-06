@@ -61,7 +61,6 @@ if(XHPROF_ANALYSIS && _DEBUG_ && function_exists('xhprof_enable'))
 
 //加载框架函数
 include_once(dirname(__FILE__)._DS_.'functions.php');
-die("functions");
 if(_CLI_)
 {
     set_include_path(

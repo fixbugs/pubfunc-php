@@ -676,4 +676,4 @@ class Slae
     }
 }
 
-Slae::createApp();
+//Slae::createApp();
