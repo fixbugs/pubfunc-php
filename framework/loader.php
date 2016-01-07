@@ -62,8 +62,8 @@ class Leb_Appbase
     private $_coreObj = array(
         'request' => 'Leb_Request',
         'router'  => 'Leb_Router',
-        'gearman' => 'plugin_gearman',
-        'comdb'   => 'Leb_Dao_Comdb',
+        //'gearman' => 'plugin_gearman',
+        //'comdb'   => 'Leb_Dao_Comdb',
         'log'     => 'Leb_Log',
     );
 
@@ -586,6 +586,7 @@ class Slae
     public static function createApp()
     {
         self::$_app   = _CLI_ ? new Leb_CmdApp() : new Leb_WebApp();
+        //die("dd");
     }
 
     /**
@@ -676,4 +677,4 @@ class Slae
     }
 }
 
-//Slae::createApp();
+Slae::createApp();
